@@ -1,0 +1,1 @@
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i app.msi /qn" -Wait
