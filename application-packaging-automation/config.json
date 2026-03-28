@@ -1,8 +1,8 @@
 {
     "AppName": "7-Zip",
-    "Installer": "7z2407.msi",
+    "Installer": "7z2600-x64.msi",
     "InstallType": "MSI",
     "ExePath": "C:\\Program Files\\7-Zip\\7z.exe",
-    "Version": "24.07",
+    "Version": "26.00",
     "RegistryPath": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\7-Zip"
 }

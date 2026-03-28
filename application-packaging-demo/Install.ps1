@@ -3,7 +3,7 @@
     Enterprise Application Packaging Demo
 #>
 
-$msiFile = "7z2407.msi"
+$msiFile = "7z2600-x64.msi"
 $logFile = "installation_log.log"
 
 Write-Host "Starting silent installation..." -ForegroundColor Cyan
