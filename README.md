@@ -2,7 +2,7 @@
 
 ## 1. Application Packaging Demo
 A foundational demo that implements the core enterprise application packaging workflow: silent installation, SCCM-compatible detection, and clean uninstallation. It validates the essential skills for Windows application deployment using MSI and PowerShell.
-## Project Structure - Application Packaging Demo
+### Project Structure - Application Packaging Demo
 ```plaintext
 application-packaging-demo/
 ├── Install.ps1
@@ -12,9 +12,9 @@ application-packaging-demo/
 
 ## 2. Application Packaging Automation
 An enterprise-level automation tool that streamlines the packaging process through configuration-driven deployment. It decouples application settings from script logic, enables automated logging, and supports post-install configuration—ideal for scaling to multiple application packages.
-## Project Structure - Application Packaging Automation
+### Project Structure - Application Packaging Automation
 ```plaintext
-application-packaging-demo/
+application-packaging-automation/
 ├── AutoPack.ps1
 ├── config.json
 └── logs/
