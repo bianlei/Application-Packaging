@@ -1,11 +1,15 @@
-# 企业级自动化应用打包与部署脚本
+# Read all and convert to Json object
 $config = Get-Content -Raw -Path "config.json" | ConvertFrom-Json
+
+# Define log file path with timestamp
 $logFile = "logs\pack_log_$(Get-Date -Format 'yyyyMMddHHmmss').log"
+
+# Create logs directory if not exists
 New-Item -ItemType Directory -Path "logs" -Force | Out-Null
 
 function Write-Log {
     param($msg)
-    "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') $msg" | Out-File -Path $logFile -Append
+    "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') $msg" | Out-File -FilePath $logFile -Append
     Write-Host $msg
 }
 
@@ -13,12 +17,11 @@ try {
     Write-Log "Start packaging $($config.AppName)"
 
     if ($config.InstallType -eq "MSI") {
-        Start-Process msiexec.exe -ArgumentList "/i $($config.Installer) /qn /norestart /l*v $logFile" -Wait
+        Start-Process msiexec.exe -ArgumentList "/i ""$($config.Installer)"" /qn /norestart /l*v ""$logFile""" -Wait
     }
 
     if (Test-Path $config.ExePath) {
         Write-Log "Installation SUCCESS"
-        # 模拟写入注册表（企业配置）
         New-Item -Path $config.RegistryPath -Force | Out-Null
         Set-ItemProperty -Path $config.RegistryPath -Name "DisplayVersion" -Value $config.Version
         Write-Log "Registry config applied"

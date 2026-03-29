@@ -2,7 +2,7 @@
     Silent Uninstall Script
 #>
 
-$msiPath = "C:\Users\$env:USERNAME\Desktop\7z2600-x64.msi"
+$msiPath = "D:\Dev\Application-Packaging\Setup\7z2600-x64.msi"
 
 # 读取 MSI 文件的 ProductCode
 $windowsInstaller = New-Object -ComObject WindowsInstaller.Installer
